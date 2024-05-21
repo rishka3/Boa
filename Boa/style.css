@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-content {
+  background-color: #fff;
+  border: 1px solid #888;
+  max-width: 400px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 20px;
+}
+
+.modal-content button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  background-color: #191e2b;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background-color: #1f2838;
+}
+
+#modalNo {
+  display: none;
+}
+
+#modalNo .no-modal-content {
+  text-align: center;
+
+}
+
+#modalNo img {
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #00070c;
+}
+
+.wrapper {
+  width: 65vmin;
+  height: 70vmin;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 5px;
+  background: #1f2838;
+  box-shadow: 0 20px 40px rgba(44, 74, 196, 0.2);
+}
+
+.game-details {
+  color: #B8C6DC;
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 20px 27px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.play-board {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  background: #191e2b;
+  grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+}
+
+.play-board .food {
+  background: url('/red_apple.svg') no-repeat center center;
+  filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.9));
+  background-size: contain;
+  transform: scale(1.5);
+}
+
+.play-board .head {
+  background-color: #A3C734;
+  box-shadow: 0 0 10px 5px rgba(255, 255, 0, 0.19);
+  transform-origin: center;
+  transition: transform 0.2s;
+}
+
+.head.up {
+  background-size: contain;
+  transform: rotate(-90deg);
+}
+
+.head.down {
+  background-size: contain;
+  transform: rotate(90deg);
+}
+
+.head.left {
+  background-size: contain;
+  transform: rotate(180deg);
+}
+
+.head.right {
+  background-size: contain;
+  transform: rotate(0deg);
+}
+
+.play-board .head-2 {
+  background-color: #789426;
+}
+
+.controls {
+  display: none;
+  justify-content: space-between;
+}
+
+.controls i {
+  padding: 25px 0;
+  text-align: center;
+  font-size: 1.3rem;
+  color: #B8C6DC;
+  width: calc(100% / 4);
+  cursor: pointer;
+  border-right: 1px solid #171B26;
+}
+
+@media screen and (max-width: 800px) {
+  .wrapper {
+    width: 90vmin;
+    height: 115vmin;
+  }
+
+  .game-details {
+    font-size: 1rem;
+    padding: 15px 27px;
+  }
+
+  .controls {
+    display: flex;
+  }
+
+  .controls i {
+    padding: 15px 0;
+    font-size: 1rem;
+  }
+}
